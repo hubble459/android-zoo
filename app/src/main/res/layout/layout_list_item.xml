@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:contentDescription="image"
+        android:src="@drawable/ic_child_care_black_24dp"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/animal_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/image_view"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/image_view"
+        tools:text="Dolphin" />
+
+    <TextView
+        android:id="@+id/animal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@id/image_view"
+        android:textSize="21sp"
+        tools:text="Flipper" />
+
+    <TextView
+        android:id="@+id/animal_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/image_view"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@id/image_view"
+        tools:text="@string/male" />
+
+    <TextView
+        android:id="@+id/age_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="200dp"
+        android:layout_toEndOf="@+id/image_view"
+        android:text="@string/age" />
+
+    <TextView
+        android:id="@+id/food_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/image_view"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/image_view"
+        android:text="@string/food2" />
+
+    <TextView
+        android:id="@+id/food_animal_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/image_view"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/food_animal"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/age_animal_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@id/age_animal"
+        tools:text="0" />
+</RelativeLayout>

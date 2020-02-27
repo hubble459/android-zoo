@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Zoo</string>
+    <string name="button_send">Stuur</string>
+    <string name="title_home">Dieren</string>
+    <string name="title_shop">Winkel</string>
+    <string name="title_notifications">Notificaties</string>
+    <string name="title_breeding">Paren</string>
+    <string name="bunny">Konijn</string>
+    <string name="chicken">Kip</string>
+    <string name="cow">Koe</string>
+    <string name="elephant">Olifant</string>
+    <string name="hippo">Nijlpaard</string>
+    <string name="child">Kind</string>
+    <string name="monkey">Aap</string>
+    <string name="pig">Varken</string>
+    <string name="tiger">Tijger</string>
+    <string name="turtle">Schildpad</string>
+    <string name="coins">Munten</string>
+    <string name="food">Voedsel</string>
+    <string name="average_price">50 Munten</string>
+    <string name="low_price">25 Munten</string>
+    <string name="high_price">100 Munten</string>
+    <string name="food2">Voedsel:</string>
+    <string name="age">Leefdtijd:</string>
+    <string name="name">Naam</string>
+    <string name="male">Man</string>
+    <string name="female">Vrouw</string>
+    <string name="custom">Anders</string>
+    <string name="random">Random</string>
+    <string name="gender">Geslacht</string>
+    <string name="title_map">Map</string>
+</resources>
