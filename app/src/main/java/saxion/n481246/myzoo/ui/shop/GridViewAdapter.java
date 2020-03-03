@@ -15,13 +15,14 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import saxion.n481246.myzoo.R;
+import saxion.n481246.myzoo.ShopItem;
 
 public class GridViewAdapter extends BaseAdapter {
     private Context mContext;
     private List<ShopItem> shopItems;
 
 
-    public GridViewAdapter(@NonNull Context context, @NonNull List<ShopItem> objects) {
+    GridViewAdapter(@NonNull Context context, @NonNull List<ShopItem> objects) {
         this.mContext = context;
         this.shopItems = objects;
     }

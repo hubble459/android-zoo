@@ -2,11 +2,9 @@ package saxion.n481246.myzoo;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -23,6 +21,24 @@ import saxion.n481246.myzoo.ui.shop.ShopFragment;
 import saxion.n481246.myzoo.ui.shop.dialog.AddAnimal;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final int BUNNY = R.drawable.bunny;
+    public static final int CHICKEN = R.drawable.chicken;
+    public static final int COW = R.drawable.cow;
+    public static final int ELEPHANT = R.drawable.elephant;
+    public static final int HIPPO = R.drawable.hippo;
+    public static final int CHILD = R.drawable.human_child;
+    public static final int MONKEY = R.drawable.monkey;
+    public static final int PIG = R.drawable.pig;
+    public static final int TIGER = R.drawable.tiger;
+    public static final int TURTLE = R.drawable.turtle;
+
+    public static final int BABY_BONES = R.drawable.bones;
+    public static final int WATER = R.drawable.water;
+    public static final int MEAT = R.drawable.meat;
+    public static final int PEA = R.drawable.pea;
+    public static final int DONUT = R.drawable.donut;
+    public static final int BREAD = R.drawable.bread;
 
     private static final String TAG = "MainActivity";
     public static ArrayList<Animal> animalList = new ArrayList<>();
@@ -50,39 +66,36 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Started.");
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment;
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
+        Fragment selectedFragment;
 
-            TextView textView = findViewById(R.id.screen_title);
-            switch (item.getItemId()) {
-                case R.id.navigation_shop:
-                    selectedFragment = new ShopFragment();
-                    textView.setText(R.string.title_shop);
-                    break;
-                case R.id.navigation_notifications:
-                    selectedFragment = new NotificationsFragment();
-                    textView.setText(R.string.title_notifications);
-                    break;
-                case R.id.navigation_breeding:
-                    selectedFragment = new BreedingFragment();
-                    textView.setText(R.string.title_breeding);
-                    break;
-                case R.id.navigation_map:
-                    selectedFragment = new MapFragment();
-                    textView.setText(R.string.title_map);
-                    break;
-                default:
-                    selectedFragment = new HomeFragment();
-                    textView.setText(R.string.title_home);
-                    break;
-            }
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
-
-            return true;
+        TextView textView = findViewById(R.id.screen_title);
+        switch (item.getItemId()) {
+            case R.id.navigation_shop:
+                selectedFragment = new ShopFragment();
+                textView.setText(R.string.title_shop);
+                break;
+            case R.id.navigation_notifications:
+                selectedFragment = new NotificationsFragment();
+                textView.setText(R.string.title_notifications);
+                break;
+            case R.id.navigation_breeding:
+                selectedFragment = new BreedingFragment();
+                textView.setText(R.string.title_breeding);
+                break;
+            case R.id.navigation_map:
+                selectedFragment = new MapFragment();
+                textView.setText(R.string.title_map);
+                break;
+            default:
+                selectedFragment = new HomeFragment();
+                textView.setText(R.string.title_home);
+                break;
         }
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+
+        return true;
     };
 
     public void buyItem(View view) {
@@ -105,7 +118,18 @@ public class MainActivity extends AppCompatActivity {
         animalList.add(new Animal("God", R.drawable.turtle, "Turtle", "Androgynous"));
     }
 
-    public static int getIdFromAnimalType(String type) {
+    public static int getPriceFromAnimalType(String type) {
+        switch (type.toLowerCase()) {
+            case "child":
+                return 100;
+            case "pig":
+                return 25;
+            default:
+                return 50;
+        }
+    }
+
+    public static int getImageFromAnimalType(String type) {
         switch (type.toLowerCase()) {
             case "bunny":
                 return R.drawable.bunny;
@@ -117,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 return R.drawable.elephant;
             case "hippo":
                 return R.drawable.hippo;
-            case "child":
+            case "human child":
                 return R.drawable.human_child;
             case "monkey":
                 return R.drawable.monkey;
@@ -125,21 +149,8 @@ public class MainActivity extends AppCompatActivity {
                 return R.drawable.pig;
             case "tiger":
                 return R.drawable.tiger;
-            case "turtle":
+            default:
                 return R.drawable.turtle;
-            default:
-                return 0;
-        }
-    }
-
-    public static int getPriceFromAnimalType(String type) {
-        switch (type.toLowerCase()) {
-            case "child":
-                return 100;
-            case "pig":
-                return 25;
-            default:
-                return 50;
         }
     }
 

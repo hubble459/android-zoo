@@ -1,4 +1,4 @@
-package saxion.n481246.myzoo.ui.shop;
+package saxion.n481246.myzoo;
 
 public class ShopItem {
     private String itemName;

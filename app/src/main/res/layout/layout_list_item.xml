@@ -84,4 +84,14 @@
         android:layout_marginStart="13dp"
         android:layout_toEndOf="@id/age_animal"
         tools:text="0" />
+
+    <TextView
+        android:id="@+id/animalID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/age_animal"
+        android:layout_alignTop="@id/animal_gender"
+        android:enabled="false"
+        android:textSize="0sp"
+        tools:text="ID" />
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package saxion.n481246.myzoo;
+package saxion.n481246.myzoo.ui.home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import saxion.n481246.myzoo.Animal;
+import saxion.n481246.myzoo.R;
 
 public class ListViewAdapter extends ArrayAdapter<Animal> {
 
@@ -54,8 +57,9 @@ public class ListViewAdapter extends ArrayAdapter<Animal> {
         TextView food = listItem.findViewById(R.id.food_animal_counter);
         food.setText(currentAnimal.getFood() + "");
 
+        TextView id = listItem.findViewById(R.id.animalID);
+        id.setText(currentAnimal.getId() + "");
+
         return listItem;
     }
-
-
 }

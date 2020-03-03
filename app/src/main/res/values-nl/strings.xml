@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My Zoo</string>
+    <string name="app_name">Mijn Dierentuin</string>
     <string name="button_send">Stuur</string>
     <string name="title_home">Dieren</string>
     <string name="title_shop">Winkel</string>
@@ -11,7 +11,7 @@
     <string name="cow">Koe</string>
     <string name="elephant">Olifant</string>
     <string name="hippo">Nijlpaard</string>
-    <string name="child">Kind</string>
+    <string name="child">Mensen Kind</string>
     <string name="monkey">Aap</string>
     <string name="pig">Varken</string>
     <string name="tiger">Tijger</string>

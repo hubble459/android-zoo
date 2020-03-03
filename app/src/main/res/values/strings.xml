@@ -11,7 +11,7 @@
     <string name="cow">Cow</string>
     <string name="elephant">Elephant</string>
     <string name="hippo">Hippo</string>
-    <string name="child">Child</string>
+    <string name="child">Human Child</string>
     <string name="monkey">Monkey</string>
     <string name="pig">Pig</string>
     <string name="tiger">Tiger</string>
@@ -30,4 +30,16 @@
     <string name="random">Random</string>
     <string name="gender">Gender</string>
     <string name="title_map">Map</string>
+    <string name="baby_bones">Baby Bones</string>
+    <string name="meat">Meat</string>
+    <string name="water">Water</string>
+    <string name="pea">Pea</string>
+    <string name="bread">Bread</string>
+    <string name="donut">Donut</string>
+    <string name="animals">Animals</string>
+    <string name="confirm">Confirm</string>
+    <string name="confirm_kill">Are you sure you want to kill %s?</string>
+    <string name="yes">Yes</string>
+    <string name="kill_deleted">%s deleted...</string>
+    <string name="cancel">Cancel</string>
 </resources>

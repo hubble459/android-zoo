@@ -51,13 +51,10 @@ public class AddAnimal extends DialogFragment {
         });
 
         builder.setView(view)
-                .setPositiveButton("Make", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        makeAnimal(view);
-                        MainActivity.coins -= MainActivity.getPriceFromAnimalType(type);
-                        Toast.makeText(getContext(), "Animal added!", Toast.LENGTH_SHORT).show();
-                    }
+                .setPositiveButton("Make", (dialog, id) -> {
+                    makeAnimal(view);
+                    MainActivity.coins -= MainActivity.getPriceFromAnimalType(type);
+                    Toast.makeText(getContext(), "Animal added!", Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -68,22 +65,50 @@ public class AddAnimal extends DialogFragment {
         return builder.create();
     }
 
-    public void makeAnimal(View view) {
+    private void makeAnimal(View view) {
         String name = ((EditText) view.findViewById(R.id.animal_name)).getText().toString();
         RadioButton checkedButton = view.findViewById(((RadioGroup) view.findViewById(R.id.radio_group)).getCheckedRadioButtonId());
         String gender;
-        if (checkedButton.getText().toString().equals("Custom")) {
+        if (checkedButton.getText().toString().equals(getString(R.string.custom))) {
             gender = ((EditText) view.findViewById(R.id.custom_gender)).getText().toString();
-        } else if (checkedButton.getText().toString().equals("Random")) {
+        } else if (checkedButton.getText().toString().equals(getString(R.string.random))) {
             int rand = (int) (Math.random() * 2);
-            if (rand == 0) gender = "Male";
-            else gender = "Female";
+            if (rand == 0) gender = getString(R.string.male);
+            else gender = getString(R.string.female);
         } else {
             gender = checkedButton.getText().toString();
         }
 
-        int imageId = MainActivity.getIdFromAnimalType(type);
+        int imageId = getImageIdFromType(type);
 
         MainActivity.animalList.add(new Animal(name, imageId, type, gender));
+    }
+
+    private int getImageIdFromType(String type) {
+        switch (type.toLowerCase()) {
+            case "bunny":
+                return MainActivity.BUNNY;
+            case "chicken":
+                return MainActivity.CHICKEN;
+            case "cow":
+                return MainActivity.COW;
+            case "elephant":
+                return MainActivity.ELEPHANT;
+            case "hippo":
+                return MainActivity.HIPPO;
+            case "child":
+                return MainActivity.CHILD;
+            case "monkey":
+                return MainActivity.MONKEY;
+            case "pig":
+                return MainActivity.PIG;
+            case "tiger":
+                return MainActivity.TIGER;
+            case "turtle":
+                return MainActivity.TURTLE;
+
+            default:
+                return MainActivity.BABY_BONES;
+        }
     }
 }
