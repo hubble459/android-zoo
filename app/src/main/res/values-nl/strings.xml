@@ -22,7 +22,7 @@
     <string name="low_price">25 Munten</string>
     <string name="high_price">100 Munten</string>
     <string name="food2">Voedsel:</string>
-    <string name="age">Leefdtijd:</string>
+    <string name="level">Level:</string>
     <string name="name">Naam</string>
     <string name="male">Man</string>
     <string name="female">Vrouw</string>
@@ -30,4 +30,19 @@
     <string name="random">Random</string>
     <string name="gender">Geslacht</string>
     <string name="title_map">Map</string>
+    <string name="baby_bones">Baby Botten</string>
+    <string name="meat">Vlees</string>
+    <string name="water">Water</string>
+    <string name="pea">Erwt</string>
+    <string name="bread">Brood</string>
+    <string name="donut">Donut</string>
+    <string name="animals">Dieren</string>
+    <string name="confirm">Bevestig</string>
+    <string name="confirm_kill">Weet je zeker dat je %s wilt vermoorden?</string>
+    <string name="yes">Ja</string>
+    <string name="kill_deleted">%s is vermoord…</string>
+    <string name="cancel">Cancel</string>
+    <string name="hp_bar">HP Bar</string>
+    <string name="image">foto</string>
+    <string name="attack">Val aan</string>
 </resources>

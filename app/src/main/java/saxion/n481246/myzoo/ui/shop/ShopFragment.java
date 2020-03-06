@@ -49,6 +49,7 @@ public class ShopFragment extends Fragment {
                     Toast.makeText(getContext(), "ShopItem", Toast.LENGTH_SHORT).show();
                 }
             });
+
             GridViewAdapter adapter = new GridViewAdapter(view.getContext(), shopDataAnimals());
             gridView.setAdapter(adapter);
 

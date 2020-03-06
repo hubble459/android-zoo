@@ -3,11 +3,9 @@ package saxion.n481246.myzoo.ui.shop.dialog;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -21,6 +19,7 @@ import java.util.Objects;
 import saxion.n481246.myzoo.Animal;
 import saxion.n481246.myzoo.MainActivity;
 import saxion.n481246.myzoo.R;
+import saxion.n481246.myzoo.SingletonAnimalList;
 
 public class AddAnimal extends DialogFragment {
     private String type;
@@ -40,27 +39,20 @@ public class AddAnimal extends DialogFragment {
 
         final RadioButton button = view.findViewById(R.id.other);
         final EditText customBox = view.findViewById(R.id.custom_gender);
-        button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    customBox.setVisibility(View.VISIBLE);
-                else
-                    customBox.setVisibility(View.INVISIBLE);
-            }
+        button.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked)
+                customBox.setVisibility(View.VISIBLE);
+            else
+                customBox.setVisibility(View.INVISIBLE);
         });
 
         builder.setView(view)
                 .setPositiveButton("Make", (dialog, id) -> {
                     makeAnimal(view);
-                    MainActivity.coins -= MainActivity.getPriceFromAnimalType(type);
+                    MainActivity.setCoins(MainActivity.getCoins() - MainActivity.getPriceFromAnimalType(type));
                     Toast.makeText(getContext(), "Animal added!", Toast.LENGTH_SHORT).show();
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Objects.requireNonNull(getDialog()).cancel();
-                    }
-                });
+                .setNegativeButton("Cancel", (dialog, id) -> Objects.requireNonNull(getDialog()).cancel());
 
         return builder.create();
     }
@@ -81,7 +73,7 @@ public class AddAnimal extends DialogFragment {
 
         int imageId = getImageIdFromType(type);
 
-        MainActivity.animalList.add(new Animal(name, imageId, type, gender));
+        SingletonAnimalList.getInstance().add(new Animal(name, imageId, type, gender));
     }
 
     private int getImageIdFromType(String type) {
@@ -96,7 +88,7 @@ public class AddAnimal extends DialogFragment {
                 return MainActivity.ELEPHANT;
             case "hippo":
                 return MainActivity.HIPPO;
-            case "child":
+            case "human child":
                 return MainActivity.CHILD;
             case "monkey":
                 return MainActivity.MONKEY;

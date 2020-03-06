@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.home.AnimalDetails" />
+        <activity android:name=".ui.home.pokemonbattle.AnimalFight" />
     </application>
 
 </manifest>
